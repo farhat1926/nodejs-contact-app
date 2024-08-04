@@ -1,0 +1,38 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>detail contak</h2>
+      <% if (!contact) { %>
+      <div class="alert alert-secondary fw-bold" role="alert">
+        data tidak terdaftar
+        <a href="/kontak" class="alert-link fw-normal">
+          &laquo;kembali ke daftar kontak</a
+        >
+      </div>
+      <% }else{ %>
+
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title"><%= contact.nama %></h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">
+            <%=contact.nomer%>
+          </h6>
+          <p class="card-text"><%= contact.status%></p>
+          <a href="/kontak/edit/<%= contact.nama %>" class="btn btn-info badge"
+            >Ubah</a
+          >
+          <a
+            href="/kontak/delete/<%= contact.nama %>"
+            class="btn btn-danger badge"
+            onclick="return confirm('apakah anda yakin?')"
+            >Hapus</a
+          >
+          <a href="/kontak" class="card-link d-block mt-3"
+            >&laquo;kembali ke daftar kontak</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%}%>
